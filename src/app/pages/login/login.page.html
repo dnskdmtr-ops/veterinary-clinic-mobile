@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ВетКлін</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h1>Вхід</h1>
+
+  <ion-item>
+    <ion-input
+      label="Email"
+      labelPlacement="stacked"
+      type="email"
+      [(ngModel)]="email">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input
+      label="Пароль"
+      labelPlacement="stacked"
+      type="password"
+      [(ngModel)]="password">
+    </ion-input>
+  </ion-item>
+
+  <ion-button
+    expand="block"
+    (click)="login()"
+    [disabled]="loading">
+
+    {{ loading ? 'Вхід...' : 'Увійти' }}
+
+  </ion-button>
+
+  <p *ngIf="errorMessage">
+    {{ errorMessage }}
+  </p>
+
+</ion-content>
